@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat vs Dog Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🐱🐶 Cat vs Dog Classifier</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="images" accept="image/*" multiple required><br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <script>
+        document.querySelector("form").onsubmit = function() {
+            document.body.innerHTML += "<p>⏳ Predicting... Please wait 🧠</p>";
+        }
+    </script>
+</body>
+</html>
