@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Prediction Results</h2>
+    {% for result in results %}
+        <div class="result-block">
+            <img src="{{ result.filepath }}" width="250"><br>
+            <h3>{{ result.label }}</h3>
+            <p>Confidence: {{ result.confidence }}%</p>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width:{{ result.confidence }}%"></div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <a href="/">Try more images</a>
+</body>
+</html>
